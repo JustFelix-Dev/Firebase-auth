@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn{
+  margin-left: 50%;
+}
+body{
+    background-color:lightgreen;
+}
+nav{
+    background-color: lightgreen;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-self: center;
+
+}
+ul li {
+    display: inline-block;
+    font-size: 1.2rem;
+    display: none;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 0 1.2rem;
+}
+li a:hover{
+    text-decoration: line-through;
+}
+.accordion{
+    margin: 0 auto;
+    width: 70%;
+}

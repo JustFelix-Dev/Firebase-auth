@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireBase Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./Apple-Logo.png" alt="nav--logo" height="50" width="100">
+            <ul>
+                <li class="logged--in"><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Account</a></li>
+                <li class="logged--in"><a href="#" id="logOut" >Logout</a></li>
+                <li class="logged--in"><a href="#"  data-bs-toggle="modal" data-bs-target="#createGuide">Create Movie</a></li>
+                <li class="logged--out"><a href="#"  data-bs-toggle="modal" data-bs-target="#logIn">LogIn</a></li>
+                 <li class="logged--out"><a href="#" data-bs-toggle="modal" data-bs-target="#kinetic">SignUp</a></li>
+        </nav>
+    </header>
+    <!-- Button trigger modal --
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Account-Details:</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="accountDetails">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="kinetic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">SignUp:</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="signup">
+            <label class="form-label" for="signupEmail">Email:</label>
+            <input class="form-control" type="text" id="signupEmail" placeholder="Email" required>
+            <label class="form-label" for="signupPass">Password:</label>
+            <input  class="form-control" type="text" id="signupPass" placeholder="Password" required>
+            <label for="bio">One-Line Bio :</label>
+            <input type="text" class="form-control" id="bio"><br>
+            <button class=" btn btn-primary">SignUp</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Guide Modal -->
+  <div class="modal fade" id="createGuide" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Movies:</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" class="createForm">
+                <label class="form-label" for="title">Guide Title:</label>
+                <input class="form-control" type="text" id="title" required>
+                <label class="form-label" for="content">Content:</label>
+                <input type="text" class="form-control" id="content" required >
+                <button class=" btn btn-primary">Create</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LogIn Modal -->
+  <div class="modal fade" id="logIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">LogIn :</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" class="login">
+                <label class="form-label" for="loginEmail">Email:</label>
+                <input class="form-control" type="text" id="loginEmail" placeholder="Email" required>
+                <label class="form-label" for="loginPass">Password:</label>
+                <input  class="form-control" type="text" id="loginPass" placeholder="Password" required><br>
+                <button class=" btn btn-primary">LogIn</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- GUIDE LIST -->
+<div class="accordion accordion-flush" id="accordionFlushExample">
+   
+  </div>
+  <button class=" mybtn btn btn-outline-success">Load More</button>
+</body>
+
+<script src="bundle.js">
+</script>
+</html>
